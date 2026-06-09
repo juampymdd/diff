@@ -80,6 +80,33 @@ const IconUpload = (p: IconProps) => (
   </Icon>
 );
 
+// Marca: tile slate con divisor (split view) + minus rose / plus emerald.
+function LogoMark() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 32 32"
+      role="img"
+      aria-label="Visor de Diferencias"
+      className="shrink-0"
+    >
+      <rect
+        x="0.75"
+        y="0.75"
+        width="30.5"
+        height="30.5"
+        rx="7"
+        className="fill-slate-100 stroke-slate-300 dark:fill-slate-800 dark:stroke-slate-700"
+        strokeWidth="1.5"
+      />
+      <rect x="7" y="8.5" width="15" height="3" rx="1.5" className="fill-slate-400 dark:fill-slate-500" />
+      <rect x="7" y="14.5" width="19" height="3" rx="1.5" className="fill-emerald-500" />
+      <rect x="7" y="20.5" width="12" height="3" rx="1.5" className="fill-rose-500" />
+    </svg>
+  );
+}
+
 // ---- Tokens de chrome: borders-only, hue slate, sin glass -------------------
 const btnBase =
   "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs font-medium " +
@@ -145,7 +172,8 @@ export default function DiffViewer() {
     <div className="flex flex-col gap-4">
       {/* Toolbar tipo editor: misma hue que el canvas, separada por borde */}
       <header className="flex flex-col gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3 dark:border-slate-800 dark:bg-slate-900 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          <LogoMark />
           <h1 className="text-sm font-semibold tracking-tight text-slate-900 dark:text-slate-50">
             Visor de Diferencias
           </h1>
